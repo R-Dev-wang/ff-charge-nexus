@@ -35,8 +35,7 @@ export const OrderForm = ({ selectedProduct }: OrderFormProps) => {
         .insert({
           uid: uid.trim(),
           product_name: selectedProduct.title,
-          price: parseFloat(selectedProduct.price.replace('৳', '')),
-          order_number: Date.now() // Temporary solution for order numbering
+          price: parseFloat(selectedProduct.price.replace('৳', ''))
         })
         .select()
         .single();

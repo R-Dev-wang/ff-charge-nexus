@@ -26,7 +26,7 @@ export type Database = {
         Insert: {
           created_at?: string | null
           id?: number
-          order_number: number
+          order_number?: number
           price: number
           product_name: string
           uid: string
