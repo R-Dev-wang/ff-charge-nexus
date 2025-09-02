@@ -69,8 +69,9 @@ export const RecentOrders = () => {
               className="flex justify-between items-center p-3 bg-muted rounded-lg text-sm"
             >
               <div>
-                <p className="font-semibold">Order #{order.id}</p>
-                <p className="text-muted-foreground">{formatDate(order.created_at)}</p>
+                <p className="font-semibold">Order #{order.order_number}</p>
+                <p className="text-muted-foreground">UID: {order.uid}</p>
+                <p className="text-muted-foreground text-xs">{formatDate(order.created_at)}</p>
               </div>
               <div className="text-right">
                 <p className="font-semibold">{order.product_name}</p>
