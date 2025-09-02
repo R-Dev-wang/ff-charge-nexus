@@ -10,7 +10,7 @@ const Index = () => {
   const diamondProducts = [
     { title: "25 Diamonds", price: "৳25", image: "/lovable-uploads/1b6cfbcf-127f-4e4f-b8b8-eb23bca5448a.png" },
     { title: "50 Diamonds", price: "৳40", image: "/lovable-uploads/1b6cfbcf-127f-4e4f-b8b8-eb23bca5448a.png" },
-    { title: "115 Diamonds", price: "৳89", image: "/lovable-uploads/1b6cfbcf-127f-4e4f-b8b8-eb23bca5448a.png" },
+    { title: "115 Diamonds", price: "৳80", image: "/lovable-uploads/1b6cfbcf-127f-4e4f-b8b8-eb23bca5448a.png" },
     { title: "240 Diamonds", price: "৳160", image: "/lovable-uploads/1b6cfbcf-127f-4e4f-b8b8-eb23bca5448a.png" },
     { title: "355 Diamonds", price: "৳280", image: "/lovable-uploads/1b6cfbcf-127f-4e4f-b8b8-eb23bca5448a.png" },
     { title: "480 Diamonds", price: "৳320", image: "/lovable-uploads/1b6cfbcf-127f-4e4f-b8b8-eb23bca5448a.png" },
@@ -47,7 +47,7 @@ const Index = () => {
       {/* Header */}
       <header className="bg-card border-b">
         <div className="container mx-auto px-4 py-6">
-          <h1 className="text-3xl font-bold text-center">FF Diamond Top Up</h1>
+          <h1 className="text-3xl font-bold text-center">TIJARAH Top up Center</h1>
           <p className="text-center text-muted-foreground mt-2">Fast & Secure Free Fire Recharge</p>
         </div>
       </header>
