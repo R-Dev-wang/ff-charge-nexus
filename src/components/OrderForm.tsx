@@ -15,14 +15,24 @@ interface OrderFormProps {
 
 export const OrderForm = ({ selectedProduct }: OrderFormProps) => {
   const [uid, setUid] = useState("");
+  const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
   const handleOrder = async () => {
-    if (!selectedProduct || !uid.trim()) {
+    if (!selectedProduct || !uid.trim() || !password.trim()) {
       toast({
         title: "Missing Information",
-        description: "Please select a product and enter your UID",
+        description: "Please select a product, enter your UID and password",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (password !== "098765") {
+      toast({
+        title: "Invalid Password",
+        description: "Please enter the correct password",
         variant: "destructive",
       });
       return;
@@ -48,6 +58,7 @@ export const OrderForm = ({ selectedProduct }: OrderFormProps) => {
       });
 
       setUid("");
+      setPassword("");
     } catch (error) {
       console.error('Order error:', error);
       toast({
@@ -73,7 +84,7 @@ export const OrderForm = ({ selectedProduct }: OrderFormProps) => {
           </div>
         )}
         
-        <div>
+        <div className="animate-fade-in">
           <Label htmlFor="uid">Free Fire UID</Label>
           <Input
             id="uid"
@@ -81,13 +92,26 @@ export const OrderForm = ({ selectedProduct }: OrderFormProps) => {
             placeholder="Enter your FF UID"
             value={uid}
             onChange={(e) => setUid(e.target.value)}
+            className="transition-all duration-300 focus:scale-105"
+          />
+        </div>
+        
+        <div className="animate-fade-in">
+          <Label htmlFor="password">Security Password</Label>
+          <Input
+            id="password"
+            type="password"
+            placeholder="Enter security password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="transition-all duration-300 focus:scale-105"
           />
         </div>
         
         <Button 
           onClick={handleOrder}
-          disabled={!selectedProduct || !uid.trim() || isLoading}
-          className="w-full"
+          disabled={!selectedProduct || !uid.trim() || !password.trim() || isLoading}
+          className="w-full hover-scale transition-all duration-300"
         >
           {isLoading ? "Processing..." : "Order Now"}
         </Button>

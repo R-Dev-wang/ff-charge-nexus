@@ -3,6 +3,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ProductCard } from "@/components/ProductCard";
 import { OrderForm } from "@/components/OrderForm";
 import { RecentOrders } from "@/components/RecentOrders";
+import logo from "@/assets/logo.png";
 
 const Index = () => {
   const [selectedProduct, setSelectedProduct] = useState<{title: string; price: string} | null>(null);
@@ -47,7 +48,10 @@ const Index = () => {
       {/* Header */}
       <header className="bg-card border-b">
         <div className="container mx-auto px-4 py-6">
-          <h1 className="text-3xl font-bold text-center">TIJARAH Top up Center</h1>
+          <div className="flex items-center justify-center gap-3 animate-fade-in">
+            <img src={logo} alt="Top Up House Logo" className="h-12 w-auto hover-scale" />
+            <h1 className="text-3xl font-bold">top up house</h1>
+          </div>
           <p className="text-center text-muted-foreground mt-2">Fast & Secure Free Fire Recharge</p>
         </div>
       </header>
