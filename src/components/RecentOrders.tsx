@@ -23,6 +23,22 @@ export const RecentOrders = () => {
     
     // Clean up old orders (older than 6 months)
     cleanupOldOrders();
+    
+    // Set up real-time subscription for order updates
+    const subscription = supabase
+      .channel('orders')
+      .on('postgres_changes', { 
+        event: '*', 
+        schema: 'public', 
+        table: 'orders' 
+      }, () => {
+        fetchRecentOrders();
+      })
+      .subscribe();
+
+    return () => {
+      subscription.unsubscribe();
+    };
   }, []);
 
   const fetchRecentOrders = async () => {
