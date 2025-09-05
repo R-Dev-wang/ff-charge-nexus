@@ -118,7 +118,7 @@ const Index = () => {
 
         {/* Footer with Recent Orders */}
         <footer className="mt-16 py-8 border-t">
-          <RecentOrders />
+          <RecentOrders key={Date.now()} />
         </footer>
       </div>
     </div>
